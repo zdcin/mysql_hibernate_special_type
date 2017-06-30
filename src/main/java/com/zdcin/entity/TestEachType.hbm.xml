@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-6-1 18:07:22 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="iot" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.zdcin.entity.TestEachType"
+		optimistic-lock="version" polymorphism="implicit"
+		select-before-update="false" table="test_each_type">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+
+		<property generated="never" lazy="false" name="json"
+			optimistic-lock="true" type="com.mysql_hibernate_special_type.hibernate_extends.JsonType"
+			unique="false">
+			<column name="json" />
+		</property>
+
+		<property generated="never" lazy="false" name="testenum"
+			optimistic-lock="true" type="com.zdcin.hibernate_extends.MyTestEnumType"
+			unique="false">
+			<column name="testenum" />
+		</property>
+
+		<property generated="never" lazy="false" name="geo"
+			optimistic-lock="true" type="com.mysql_hibernate_special_type.hibernate_extends.PointType"
+			unique="false">
+			<column name="geo" />
+		</property>
+		<property generated="never" lazy="false" name="geoRange"
+			optimistic-lock="true" type="com.mysql_hibernate_special_type.hibernate_extends.PolygonType"
+			unique="false">
+			<column name="geo_range" />
+		</property>
+	</class>
+</hibernate-mapping>
